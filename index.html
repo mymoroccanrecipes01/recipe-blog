@@ -470,6 +470,530 @@
     }
     </style>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Recipe Blog</title>
+    <meta name="description" content="Discover delicious recipes from around the world">
+    
+    <!-- SEO and Social Meta Tags -->
+    <meta property="og:title" content="My Recipe Blog">
+    <meta property="og:description" content="Discover delicious recipes from around the world">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/hero-image.jpg">
+    <meta property="og:url" content="">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="My Recipe Blog">
+    <meta name="twitter:description" content="Discover delicious recipes from around the world">
+    <meta name="twitter:image" content="/assets/images/hero-image.jpg">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="favicon.ico">
+    <link rel="canonical" href="">
+</head>
+<body>
+    <!-- Loading State -->
+    <div id="loading-state" class="loading-state">
+        <div class="loading-spinner"></div>
+        <p>Loading recipes...</p>
+    </div>
+
+    <header class="site-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="/" class="nav-logo">
+                    <img id="site-logo" src="https://via.placeholder.com/120x40/2c3e50/ffffff?text=LOGO" alt="Logo">
+                    <span id="site-name">My Recipe Blog</span>
+                </a>
+                
+                <div class="nav-menu">
+                    <a href="/" class="nav-link active">Home</a>
+                    <a href="#categories" class="nav-link">Categories</a>
+                    <a href="#authors" class="nav-link">Authors</a>
+                </div>
+                
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search recipes...">
+                    <button id="search-btn" aria-label="Search">🔍</button>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Welcome to <span id="hero-site-name">My Recipe Blog</span></h1>
+                <p>Discover amazing recipes from around the world, created with love and traditional techniques.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon">🍳</span>
+                        <div class="stat-info">
+                            <span class="stat-number" id="recipe-count">0</span>
+                            <span class="stat-label">Recipes</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">📚</span>
+                        <div class="stat-info">
+                            <span class="stat-number" id="category-count">0</span>
+                            <span class="stat-label">Categories</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">👨‍🍳</span>
+                        <div class="stat-info">
+                            <span class="stat-number" id="author-count">0</span>
+                            <span class="stat-label">Chefs</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#recipes" class="btn btn-primary btn-large">Explore Recipes</a>
+                    <a href="#categories" class="btn btn-secondary btn-large">Browse Categories</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Recipes Section -->
+        <section id="recipes" class="featured-section">
+            <div class="section-header">
+                <h2>Latest Recipes</h2>
+                <div class="section-controls">
+                    <div class="sort-controls">
+                        <label for="sort-select">Sort by:</label>
+                        <select id="sort-select">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="alphabetical">A-Z</option>
+                            <option value="popular">Most Popular</option>
+                        </select>
+                    </div>
+                    <div class="view-toggle">
+                        <button id="grid-view" class="view-btn active" aria-label="Grid view">⊞</button>
+                        <button id="list-view" class="view-btn" aria-label="List view">☰</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Active Filters Display -->
+            <div class="active-filters" id="active-filters" style="display: none;">
+                <span class="filters-label">Active filters:</span>
+                <div class="filter-tags" id="active-filter-tags">
+                    <!-- Active filter tags will be shown here -->
+                </div>
+                <button class="clear-filters" id="clear-filters">Clear All</button>
+            </div>
+
+            <!-- Recipes Grid -->
+            <div id="recipes-grid" class="recipes-grid">
+                <!-- Recipes will be loaded here by JavaScript -->
+            </div>
+
+            <!-- No Results Message -->
+            <div id="no-recipes" class="no-results" style="display: none;">
+                <div class="no-results-icon">🔍</div>
+                <h3>No recipes found</h3>
+                <p>No recipes match your current search or filters.</p>
+                <div class="no-results-actions">
+                    <button id="clear-search-btn" class="btn btn-secondary">Clear Search</button>
+                    <a href="/" class="btn btn-primary">Show All Recipes</a>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div id="pagination" class="pagination">
+                <!-- Pagination will be added by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories" class="categories-section">
+            <div class="section-header">
+                <h2>Browse by Category</h2>
+                <p>Explore our collection of recipes organized by cuisine type and cooking style</p>
+            </div>
+            <div id="categories-grid" class="categories-grid">
+                <!-- Categories will be loaded here by JavaScript -->
+            </div>
+            <div class="section-footer">
+                <a href="#recipes" class="btn btn-outline">View All Recipes</a>
+            </div>
+        </section>
+
+        <!-- Authors Section -->
+        <section id="authors" class="authors-section">
+            <div class="section-header">
+                <h2>Our Chefs</h2>
+                <p>Meet the talented chefs and food enthusiasts sharing their favorite recipes</p>
+            </div>
+            <div id="authors-grid" class="authors-grid">
+                <!-- Authors will be loaded here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Get the latest recipes and cooking tips delivered to your inbox</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" class="newsletter-input">
+                    <button class="btn btn-primary newsletter-btn">Subscribe</button>
+                </div>
+                <p class="newsletter-privacy">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 id="footer-site-name">My Recipe Blog</h3>
+                <p>Sharing delicious recipes and culinary traditions from around the world.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="YouTube">📺</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#authors">Authors</a></li>
+                    <li><a href="/sitemap.xml">Sitemap</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul id="footer-categories">
+                    <!-- Categories will be loaded here by JavaScript -->
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 <span id="footer-copyright">My Recipe Blog</span>. All rights reserved.</p>
+            <p>Made with ❤️ for food lovers everywhere</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" style="display: none;">
+        ↑
+    </button>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container">
+        <!-- Toast messages will appear here -->
+    </div>
+
+    <script src="js/main.js"></script>
+    
+    <!-- Structured Data for Homepage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "My Recipe Blog",
+        "description": "Discover delicious recipes from around the world",
+        "url": "",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "/?search={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <!-- Additional CSS for enhanced styling -->
+    <style>
+    .hero-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 4rem 0;
+        text-align: center;
+        border-radius: 12px;
+        margin-bottom: 3rem;
+    }
+
+    .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        margin: 2rem 0;
+        flex-wrap: wrap;
+    }
+
+    .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        backdrop-filter: blur(10px);
+    }
+
+    .stat-icon {
+        font-size: 1.5rem;
+    }
+
+    .stat-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1;
+    }
+
+    .stat-label {
+        font-size: 0.875rem;
+        opacity: 0.9;
+    }
+
+    .hero-actions {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .btn-large {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+
+    .btn-outline {
+        background: transparent;
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+    }
+
+    .btn-outline:hover {
+        background: var(--primary-color);
+        color: white;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .section-header h2 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        color: var(--primary-color);
+    }
+
+    .section-header p {
+        color: var(--text-light);
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .section-footer {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .newsletter-section {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        color: white;
+        padding: 4rem 2rem;
+        text-align: center;
+        border-radius: 12px;
+        margin: 3rem 0;
+    }
+
+    .newsletter-content h2 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .newsletter-form {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin: 2rem 0;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        flex-wrap: wrap;
+    }
+
+    .newsletter-input {
+        flex: 1;
+        padding: 0.75rem 1rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        min-width: 250px;
+    }
+
+    .newsletter-btn {
+        background: rgba(255, 255, 255, 0.2);
+        border: 2px solid white;
+        color: white;
+    }
+
+    .newsletter-btn:hover {
+        background: white;
+        color: #f5576c;
+    }
+
+    .newsletter-privacy {
+        font-size: 0.875rem;
+        opacity: 0.8;
+    }
+
+    .toast-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .toast {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        max-width: 300px;
+    }
+
+    .toast.show {
+        transform: translateX(0);
+    }
+
+    .toast-success {
+        border-left: 4px solid #27ae60;
+    }
+
+    .toast-error {
+        border-left: 4px solid #e74c3c;
+    }
+
+    .toast-close {
+        background: none;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+        margin-left: auto;
+        color: var(--text-light);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .hero-stats {
+            gap: 1rem;
+        }
+        
+        .stat-item {
+            padding: 0.75rem 1rem;
+        }
+        
+        .newsletter-form {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .newsletter-input {
+            width: 100%;
+            max-width: 300px;
+        }
+    }
+    </style>
+</body>
+>>>>>>> cc361e4 (Frontend only - public deployment)
+ght);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .hero-stats {
+            gap: 1rem;
+        }
+        
+        .stat-item {
+            padding: 0.75rem 1rem;
+        }
+        
+        .newsletter-form {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .newsletter-input {
+            width: 100%;
+            max-width: 300px;
+        }
+    }
+    </style>
+</body>
+ght);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .hero-stats {
+            gap: 1rem;
+        }
+        
+        .stat-item {
+            padding: 0.75rem 1rem;
+        }
+        
+        .newsletter-form {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .newsletter-input {
+            width: 100%;
+            max-width: 300px;
+        }
+    }
+    </style>
+</body>
 ght);
     }
 
