@@ -1,0 +1,41 @@
+[
+    {
+        "id": "rec_68c0628ab8cd1",
+        "title": "Banana Pudding Rice Krispies",
+        "slug": "banana-pudding-rice-krispies",
+        "categoryId": "cat_68c0573ebd67a",
+        "authorId": "auth_68c0575e0aa96",
+        "excerpt": "Creamy banana pudding blended with crispy Rice Krispies and marshmallow fluff for a sweet, no-bake treat.",
+        "image": "https:\/\/cdn.midjourney.com\/ceedf318-a91b-4fcf-9551-a36dcebe42d1\/0_1.png",
+        "ingredients": [
+            "8 tablespoons unsalted butter\r",
+            "6 cups Rice Krispies cereal\r",
+            "6 ½ cups mini marshmallows\r",
+            "1 teaspoon pure vanilla extract\r",
+            "1 cup crushed vanilla wafer cookies\r",
+            "¼ cup prepared banana pudding\r",
+            "Additional crushed vanilla wafers\r",
+            "Marshmallow fluff\r",
+            "White chocolate, melted"
+        ],
+        "steps": [
+            "Prepare the banana pudding following package instructions and refrigerate until thickened and set.\r",
+            "In a large saucepan, melt butter over low heat. Add marshmallows and stir until completely melted. Remove from heat.\r",
+            "Add vanilla extract, Rice Krispies cereal, crushed vanilla wafers, and banana pudding. Stir until well combined.\r",
+            "Press mixture into a greased 9x13-inch baking dish. Let cool and set.\r",
+            "Drizzle with melted white chocolate and additional crushed vanilla wafers before serving."
+        ],
+        "tags": [
+            "banana dessert",
+            "crispy treats",
+            "marshmallow fluff",
+            "no bake sweets"
+        ],
+        "seo": {
+            "title": "Banana Pudding Rice Krispies Recipe",
+            "description": "Delightful banana pudding blended with crispy Rice Krispies and marshmallow fluff for a sweet, no-bake treat. Perfect for Mother's Day breakfast in bed!"
+        },
+        "published": true,
+        "createdAt": "2025-09-09T19:23:22+02:00"
+    }
+]

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author Recipes</title>
+    <meta name="description" content="Browse recipes by author">
+    
+    <!-- SEO and Social Meta Tags (will be updated by JS) -->
+    <meta property="og:title" content="Author Recipes">
+    <meta property="og:description" content="Browse recipes by author">
+    <meta property="og:type" content="profile">
+    <meta property="og:image" content="assets/images/default-avatar.jpg">
+    <meta property="og:url" content="">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Author Recipes">
+    <meta name="twitter:description" content="Browse recipes by author">
+    <meta name="twitter:image" content="/assets/images/default-avatar.jpg">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="favicon.ico">
+    <link rel="canonical" href="">
+</head>
+<body>
+    <!-- Loading State -->
+    <div id="loading-state" class="loading-state">
+        <div class="loading-spinner"></div>
+        <p>Loading author profile...</p>
+    </div>
+
+    <header class="site-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="/" class="nav-logo">
+                    <img id="site-logo" src="/assets/images/logo.png" alt="Logo">
+                    <span id="site-name">My Recipe Blog</span>
+                </a>
+                
+                <div class="nav-menu">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="#categories" class="nav-link">Categories</a>
+                    <a href="#authors" class="nav-link active">Authors</a>
+                </div>
+                
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search recipes...">
+                    <button id="search-btn" aria-label="Search">🔍</button>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="#authors">Authors</a></li>
+                <li id="current-author-breadcrumb" aria-current="page">Author</li>
+            </ol>
+        </nav>
+
+        <!-- Author Profile Header -->
+        <div class="author-header">
+            <div class="author-info">
+                <div class="author-avatar-container">
+                    <img id="author-avatar" src="/assets/images/default-avatar.jpg" alt="Author" class="author-avatar-large">
+                    <div class="author-social-links" id="author-social">
+                        <!-- Social links will be added here if available -->
+                    </div>
+                </div>
+                <div class="author-details">
+                    <h1 id="author-name">Author Name</h1>
+                    <p id="author-bio" class="author-bio">Author bio will be loaded here...</p>
+                    <div class="author-stats">
+                        <span class="stat-item">
+                            <strong id="author-recipe-count">0</strong>
+                            <span>Recipes</span>
+                        </span>
+                        <span class="stat-item">
+                            <strong id="author-categories-count">0</strong>
+                            <span>Categories</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Author's Recipes Section -->
+        <section class="recipes-section">
+            <div class="section-header">
+                <h2 id="recipes-section-title">Recipes by <span id="author-name-recipes">this author</span></h2>
+                <div class="section-controls">
+                    <div class="sort-controls">
+                        <label for="sort-select">Sort by:</label>
+                        <select id="sort-select">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="alphabetical">A-Z</option>
+                            <option value="category">Category</option>
+                        </select>
+                    </div>
+                    <div class="view-toggle">
+                        <button id="grid-view" class="view-btn active" aria-label="Grid view">⊞</button>
+                        <button id="list-view" class="view-btn" aria-label="List view">☰</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe Filter Tags -->
+            <div class="filter-tags" id="filter-tags">
+                <!-- Filter tags will be populated by JavaScript -->
+            </div>
+
+            <!-- Recipes Grid -->
+            <div id="recipes-grid" class="recipes-grid">
+                <!-- Recipes will be loaded here by JavaScript -->
+            </div>
+
+            <!-- No Results Message -->
+            <div id="no-recipes" class="no-results" style="display: none;">
+                <div class="no-results-icon">👨‍🍳</div>
+                <h3>No recipes found</h3>
+                <p>This author hasn't published any recipes yet, or no recipes match your current search.</p>
+                <a href="/" class="btn btn-primary">Browse All Recipes</a>
+            </div>
+            
+            <!-- Pagination -->
+            <div id="pagination" class="pagination">
+                <!-- Pagination will be added by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Related Authors Section -->
+        <section class="related-authors">
+            <h2>Other Authors</h2>
+            <div id="related-authors-grid" class="authors-grid">
+                <!-- Related authors will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 id="footer-site-name">My Recipe Blog</h3>
+                <p>Sharing delicious recipes and culinary traditions from around the world.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="YouTube">📺</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#authors">Authors</a></li>
+                    <li><a href="/sitemap.xml">Sitemap</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 <span id="footer-copyright">My Recipe Blog</span>. All rights reserved.</p>
+            <p>Made with ❤️ for food lovers everywhere</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" style="display: none;">
+        ↑
+    </button>
+
+    <script src="js/main.js"></script>
+    
+    <!-- Structured Data for Author -->
+    <script type="application/ld+json" id="author-structured-data">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "",
+        "description": "",
+        "image": "",
+        "url": ""
+    }
+    </script>
+</body>
+</html>
