@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -246,4 +247,254 @@
     }
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category Recipes</title>
+    <meta name="description" content="Browse recipes by category">
+    
+    <!-- SEO and Social Meta Tags (will be updated by JS) -->
+    <meta property="og:title" content="Category Recipes">
+    <meta property="og:description" content="Browse recipes by category">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/hero-image.jpg">
+    <meta property="og:url" content="">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Category Recipes">
+    <meta name="twitter:description" content="Browse recipes by category">
+    <meta name="twitter:image" content="assets/images/hero-image.jpg">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="favicon.ico">
+    <link rel="canonical" href="">
+</head>
+<body>
+    <!-- Loading State -->
+    <div id="loading-state" class="loading-state">
+        <div class="loading-spinner"></div>
+        <p>Loading category recipes...</p>
+    </div>
+
+    <header class="site-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="/" class="nav-logo">
+                    <img id="site-logo" src="/assets/images/logo.png" alt="Logo">
+                    <span id="site-name">My Recipe Blog</span>
+                </a>
+                
+                <div class="nav-menu">
+                    <a href="" class="nav-link">Home</a>
+                    <a href="#categories" class="nav-link active">Categories</a>
+                    <a href="#authors" class="nav-link">Authors</a>
+                </div>
+                
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search recipes...">
+                    <button id="search-btn" aria-label="Search">🔍</button>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li id="current-category-breadcrumb" aria-current="page">Category</li>
+            </ol>
+        </nav>
+
+        <!-- Category Header -->
+        <div class="category-header">
+            <div class="category-hero">
+                <div class="category-info">
+                    <h1 id="category-title">Category Recipes</h1>
+                    <p id="category-description" class="category-description">Browse all recipes in this category</p>
+                    <div class="category-stats">
+                        <span class="stat-item">
+                            <strong id="category-recipe-count">0</strong>
+                            <span>Recipes</span>
+                        </span>
+                        <span class="stat-item">
+                            <strong id="category-authors-count">0</strong>
+                            <span>Authors</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="category-visual">
+                    <div id="category-featured-image" class="category-featured-image">
+                        <!-- Featured recipe image will be displayed here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category Navigation -->
+        <div class="category-navigation">
+            <h3>Explore Categories</h3>
+            <div id="category-nav-pills" class="category-pills">
+                <!-- Category navigation pills will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Recipes Section -->
+        <section class="recipes-section">
+            <div class="section-header">
+                <h2 id="recipes-section-title">All <span id="category-name-recipes">Category</span> Recipes</h2>
+                <div class="section-controls">
+                    <div class="filter-controls">
+                        <div class="difficulty-filter">
+                            <label for="difficulty-filter">Difficulty:</label>
+                            <select id="difficulty-filter">
+                                <option value="">All Levels</option>
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                        </div>
+                        <div class="sort-controls">
+                            <label for="sort-select">Sort by:</label>
+                            <select id="sort-select">
+                                <option value="newest">Newest First</option>
+                                <option value="oldest">Oldest First</option>
+                                <option value="alphabetical">A-Z</option>
+                                <option value="popular">Most Popular</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="view-toggle">
+                        <button id="grid-view" class="view-btn active" aria-label="Grid view">⊞</button>
+                        <button id="list-view" class="view-btn" aria-label="List view">☰</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Active Filters Display -->
+            <div class="active-filters" id="active-filters" style="display: none;">
+                <span class="filters-label">Active filters:</span>
+                <div class="filter-tags" id="active-filter-tags">
+                    <!-- Active filter tags will be shown here -->
+                </div>
+                <button class="clear-filters" id="clear-filters">Clear All</button>
+            </div>
+
+            <!-- Recipe Tags Cloud -->
+            <div class="tags-section">
+                <h3>Popular Tags in <span id="category-name-tags">this category</span></h3>
+                <div class="tags-cloud" id="tags-cloud">
+                    <!-- Popular tags will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Recipes Grid -->
+            <div id="recipes-grid" class="recipes-grid">
+                <!-- Recipes will be loaded here by JavaScript -->
+            </div>
+
+            <!-- No Results Message -->
+            <div id="no-recipes" class="no-results" style="display: none;">
+                <div class="no-results-icon">🍽️</div>
+                <h3>No recipes found</h3>
+                <p>No recipes match your current filters in this category.</p>
+                <div class="no-results-actions">
+                    <button id="clear-search-btn" class="btn btn-secondary">Clear Search</button>
+                    <a href="/" class="btn btn-primary">Browse All Recipes</a>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div id="pagination" class="pagination">
+                <!-- Pagination will be added by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Featured Authors in Category -->
+        <section class="category-authors">
+            <h2>Featured Authors in <span id="category-name-authors">this Category</span></h2>
+            <div id="category-authors-grid" class="authors-grid">
+                <!-- Authors who have recipes in this category will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Related Categories -->
+        <section class="related-categories">
+            <h2>Explore Related Categories</h2>
+            <div id="related-categories-grid" class="categories-grid">
+                <!-- Related categories will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 id="footer-site-name">My Recipe Blog</h3>
+                <p>Sharing delicious recipes and culinary traditions from around the world.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="YouTube">📺</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#authors">Authors</a></li>
+                    <li><a href="sitemap.xml">Sitemap</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul id="footer-categories">
+                    <!-- Categories will be loaded here -->
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 <span id="footer-copyright">My Recipe Blog</span>. All rights reserved.</p>
+            <p>Made with ❤️ for food lovers everywhere</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" style="display: none;">
+        ↑
+    </button>
+
+    <script src="js/main.js"></script>
+    
+    <!-- Structured Data for Category -->
+    <script type="application/ld+json" id="category-structured-data">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "",
+        "description": "",
+        "url": "",
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": []
+        }
+    }
+    </script>
+</body>
+>>>>>>> cc361e4 (Frontend only - public deployment)
 </html>
