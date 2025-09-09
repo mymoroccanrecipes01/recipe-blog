@@ -1,0 +1,95 @@
+[
+    {
+        "id": "rec_68c06bfcd0907",
+        "title": "Garlic Butter Shrimp Pasta",
+        "slug": "garlic-butter-shrimp-pasta",
+        "categoryId": "cat_68c06c5ee0ff7",
+        "authorId": "auth_68c06c6c1db80",
+        "excerpt": "Delicious pasta dish with garlic butter shrimp",
+        "image": "https:\/\/cdn.midjourney.com\/80ef5139-94ca-4657-a614-ee39d41d3aa4\/0_0.png",
+        "ingredients": [
+            "1 lb shrimp\r",
+            "8 oz pasta\r",
+            "4 cloves garlic\r",
+            "4 tbsp butter"
+        ],
+        "steps": [
+            "Cook pasta according to package instructions\r",
+            "In a skillet, melt butter and sauté garlic until fragrant\r",
+            "Add shrimp and cook until pink\r",
+            "Toss cooked pasta with shrimp mixture\r",
+            "Serve hot"
+        ],
+        "tags": [
+            "seafood",
+            "pasta"
+        ],
+        "seo": {
+            "title": "Garlic Butter Shrimp Pasta Recipe",
+            "description": "Try this delicious garlic butter shrimp pasta recipe for a flavorful meal."
+        },
+        "published": true,
+        "createdAt": "2025-09-09T20:03:40+02:00"
+    },
+    {
+        "id": "rec_68c06bfcd09f6",
+        "title": "Lemon Herb Shrimp Skewers",
+        "slug": "lemon-herb-shrimp-skewers",
+        "categoryId": "cat_68c06c5ee0ff7",
+        "authorId": "auth_68c06c6c1db80",
+        "excerpt": "Grilled shrimp skewers with lemon and herbs",
+        "image": "https:\/\/cdn.midjourney.com\/c24c36f8-9ac7-4bbe-8085-b8b38a7608ca\/0_2.png",
+        "ingredients": [
+            "1 lb shrimp\r",
+            "2 lemons\r",
+            "2 tbsp olive oil\r",
+            "1 tsp thyme"
+        ],
+        "steps": [
+            "Marinate shrimp in olive oil, lemon juice, and herbs\r",
+            "Thread shrimp onto skewers\r",
+            "Grill skewers until shrimp is cooked through\r",
+            "Serve with lemon wedges"
+        ],
+        "tags": [
+            "grilling",
+            "skewers"
+        ],
+        "seo": {
+            "title": "Lemon Herb Shrimp Skewers Recipe",
+            "description": "Enjoy these flavorful grilled shrimp skewers with a hint of lemon and herbs."
+        },
+        "published": true,
+        "createdAt": "2025-09-09T20:03:40+02:00"
+    },
+    {
+        "id": "rec_68c06bfcd0a06",
+        "title": "Garlic Parmesan Shrimp Stir Fry",
+        "slug": "garlic-parmesan-shrimp-stir-fry",
+        "categoryId": "cat_68c06c5ee0ff7",
+        "authorId": "auth_68c06c6c1db80",
+        "excerpt": "Quick and easy shrimp stir fry with garlic and Parmesan",
+        "image": "https:\/\/cdn.midjourney.com\/543e6bea-cc20-4d11-bf29-5d6bb2c72026\/0_2.png",
+        "ingredients": [
+            "1 lb shrimp\r",
+            "2 cloves garlic\r",
+            "1\/4 cup grated Parmesan\r",
+            "2 tbsp soy sauce"
+        ],
+        "steps": [
+            "Stir fry shrimp in garlic until pink\r",
+            "Add soy sauce and Parmesan, cook until sauce thickens\r",
+            "Serve hot over rice or noodles"
+        ],
+        "tags": [
+            "stir fry",
+            "quick meals"
+        ],
+        "seo": {
+            "title": "Garlic Parmesan Shrimp Stir Fry Recipe",
+            "description": "Make this easy garlic Parmesan shrimp stir fry for a quick and flavorful meal."
+        },
+        "published": true,
+        "createdAt": "2025-09-09T20:03:40+02:00"
+    }
+]
